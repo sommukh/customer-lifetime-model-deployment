@@ -1,27 +1,14 @@
-
 #adding necessary libraries
+
 import streamlit as st
 import pandas as pd
 import lifetimes
-import math
 import numpy as np
-import xlrd
-import datetime
 np.random.seed(42)
 import altair as alt
-import time
-import warnings
 warnings.filterwarnings("ignore")
-from math import sqrt
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
-from lifetimes.plotting import plot_frequency_recency_matrix
-from lifetimes.plotting import plot_probability_alive_matrix
-from lifetimes.plotting import plot_period_transactions
-from lifetimes.utils import calibration_and_holdout_data
-from lifetimes import ParetoNBDFitter
-from lifetimes.plotting import plot_history_alive
-from sklearn.metrics import mean_squared_error, r2_score
 
 st.markdown(""" # Customer Lifetime Prediction App 👋
 
@@ -92,7 +79,7 @@ if data is not None:
 
 		input_data = pd.DataFrame(input_data.iloc[:, 1:])
 
-        #Pareto Model
+                #Pareto Model
 
 		pareto_model = lifetimes.ParetoNBDFitter(penalizer_coef = 0.1)
 		pareto_model.fit(input_data["frequency"],input_data["recency"],input_data["T"])
@@ -102,7 +89,7 @@ if data is not None:
 		input_data["predicted_purchases"] = pareto_model.conditional_expected_number_of_purchases_up_to_time(t, input_data["frequency"], input_data["recency"], input_data["T"])
         
 
-        #Gamma Gamma Model
+                #Gamma Gamma Model
 
 		idx = input_data[(input_data["frequency"] <= 0.0)]
 		idx = idx.index
