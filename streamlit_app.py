@@ -1,12 +1,14 @@
-
 #adding necessary libraries
+
 import streamlit as st
 import pandas as pd
 import lifetimes
 import numpy as np
 np.random.seed(42)
 import altair as alt
+import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
+import base64
 
 st.markdown(""" # Customer Lifetime Prediction App 👋
 
@@ -129,7 +131,7 @@ if data is not None:
 
 		#saving the input data in the separate variable 
 
-		download = input_data
+		#download = input_data
 
 		st.write(input_data)
 
@@ -165,10 +167,25 @@ if data is not None:
 
 		#creating a button to download the result
 
-		if st.button("Download"):
-			st.write("Successfully Downloaded!!! Please Check Your Default Download Location...:smile:" )
-			return download.to_csv("customer_lifetime_prediction_result.csv")
+		st.markdown("""
 
+			### Download Your File Now!!! 
+
+			""")
+
+
+		text = """\
+		There is currently no official way of downloading data from Streamlit."""
+
+
+		st.markdown(text)
+
+		download = input_data
+		# When no file name is given, pandas returns the CSV as a string, nice.
+		csv = download.to_csv(index=False)
+		b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+		href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as &lt;some_name&gt;.csv)'
+		st.markdown(href, unsafe_allow_html=True)
 
 	#calling the function		
 
