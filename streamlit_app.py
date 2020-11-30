@@ -6,7 +6,6 @@ import lifetimes
 import numpy as np
 np.random.seed(42)
 import altair as alt
-import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 st.markdown(""" # Customer Lifetime Prediction App 👋
