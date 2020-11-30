@@ -124,14 +124,6 @@ if data is not None:
 
 		input_data = pd.concat([input_data, labels], axis = 1)
 
-		label_mapper = dict({0 : "Low", 3: "Medium", 1: "High", 2: "V_High"})
-
-		input_data["Labels"] = input_data["Labels"].map(label_mapper)
-
-		#saving the input data in the separate variable 
-
-		#download = input_data
-
 		st.write(input_data)
 
 		#adding a count bar chart
