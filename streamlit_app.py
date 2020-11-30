@@ -174,7 +174,7 @@ if data is not None:
 
 
 		text = """\
-		There is currently no official way of downloading data from Streamlit."""
+		There is currently no official way of downloading data from Streamlit as if now. So Please download the data from the below link using **"Save As"**."""
 
 
 		st.markdown(text)
