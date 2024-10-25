@@ -17,12 +17,12 @@ Upload the RFM data and get your customer lifetime prediction on the fly !!! :sm
 	""")
 
 
-st.image("https://sarasanalytics.com/wp-content/uploads/2019/11/Customer-Lifetime-value-new-1.jpg", use_column_width = True)
+st.image("image/Customer-Lifetime-value-new-1.jpg", use_column_width = True)
 
 
 data = st.file_uploader("File Uploader")
 
-st.sidebar.markdown(""" **Made with :heart: by Mukul Singhal** """)
+st.sidebar.markdown(""" **CLV - Brand Analytics ** """)
 
 
 st.sidebar.title("Input Features :pencil:")
@@ -30,7 +30,7 @@ st.sidebar.title("Input Features :pencil:")
 
 st.sidebar.markdown("""
 
-[Example CSV Input File](https://raw.githubusercontent.com/mukulsinghal001/customer-lifetime-prediction-using-python/main/model_deployment/sample_file.csv)
+[Example CSV Input File](data/sample_file.csv)
 
 	""")
 
@@ -62,7 +62,7 @@ st.sidebar.markdown("""
 
 Before uploading the file, please select the input features first.
 
-Also, please make sure the columns are in proper format. For reference you can download the [dummy data](https://raw.githubusercontent.com/mukulsinghal001/customer-lifetime-prediction-using-python/main/model_deployment/sample_file.csv).
+Also, please make sure the columns are in proper format. 
 
 **Note:** Only Use "CSV" File.
 
