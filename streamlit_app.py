@@ -20,7 +20,7 @@ st.image("https://sarasanalytics.com/wp-content/uploads/2019/11/Customer-Lifetim
 
 data = st.file_uploader("File Uploader")
 
-st.sidebar.markdown(""" **Made with :heart: by Mukul Singhal** """)
+st.sidebar.markdown(""" **CLV - Brand Analytics** """)
 
 
 st.sidebar.title("Input Features :pencil:")
